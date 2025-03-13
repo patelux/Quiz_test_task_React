@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/reset.css';
+import './styles/style.css';
 
-function App() {
+import React from "react";
+import { QuizProvider } from "./QuizProvider";
+import  Header  from "./components/Header";
+import  Quiz  from "./components/Quiz";
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QuizProvider>
+      <Header />
+      <Quiz />
+    </QuizProvider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,5 @@
+[
+  { "text": "Do you have a valid address in Mexico?", "answers": ["Yes", "No"] },
+  { "text": "Have you participated in any Sephora promotion in the last 90 days?", "answers": ["Yes", "No"] },
+  { "text": "Select your skin type to personalize your box with the right products.", "answers": ["Normal", "Sensitive", "Combination", "Oily", "Dry"] }
+]
