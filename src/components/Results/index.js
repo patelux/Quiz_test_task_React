@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect} from "react";
 import { useQuiz } from "../../QuizProvider";
 
 export default function Result (){
 
       const { state, dispatch } = useQuiz();
     
+      useEffect(() => {
+        localStorage.clear();
+      }, []);
+
       return (
         <>
             <div className="container">
