@@ -21,7 +21,6 @@ export default function Quiz() {
 
   useEffect(() => {
     getQuestions();
-    getQuestions();
     return () => {
       setIsMounted(false);
     };
