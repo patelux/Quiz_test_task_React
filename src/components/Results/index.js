@@ -23,7 +23,7 @@ export default function Result (){
                                 </li>
                         ))}
                         </ul>
-                    <button className="button small" onClick={() => dispatch({ type: "RESET" })}>Go through again</button> 
+                    {/* <button className="button small" onClick={() => dispatch({ type: "RESET" })}>Go through again</button>  */}
                 </div>
             </div>
         </>
