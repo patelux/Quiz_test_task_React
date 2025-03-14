@@ -5,12 +5,15 @@ import Hero from "../Hero";
 
 export default function Quiz() {
   const [questions, setQuestions] = useState([]);
+  const [isMounted, setIsMounted] = useState(true);
 
   const getQuestions = async () => {
     try {
       const response = await fetch('/data/questions.json');
       const data = await response.json();
-      setQuestions(data);
+      if (isMounted) { 
+        setQuestions(data);
+      }
     } catch (error) {
       console.error("Ошибка загрузки вопросов:", error);
     }
@@ -18,6 +21,10 @@ export default function Quiz() {
 
   useEffect(() => {
     getQuestions();
+    getQuestions();
+    return () => {
+      setIsMounted(false);
+    };
   }, []);
 
   const { state, dispatch } = useQuiz();
