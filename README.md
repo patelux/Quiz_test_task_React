@@ -3,4 +3,4 @@
 ## Knowledge Utilised
 1. HTML
 2. CSS
-3. React [Context, Reducer, setState, useEffect, fetch]
+3. React [useContext, useReducer, useState, useEffect, fetch]
