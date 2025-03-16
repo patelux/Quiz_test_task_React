@@ -7,11 +7,11 @@ const quizReducer = (state, action) => {
           currentQuestion: state.currentQuestion + 1,
           answers: [...state.answers, action.payload]
         };
-        localStorage.setItem("quizState", JSON.stringify(updatedState)); 
+        sessionStorage.setItem("quizState", JSON.stringify(updatedState)); 
         return updatedState;
   
       case "RESET":
-        localStorage.removeItem("quizState"); 
+        sessionStorage.removeItem("quizState"); 
         return { currentQuestion: 0, answers: [] };
   
       default:

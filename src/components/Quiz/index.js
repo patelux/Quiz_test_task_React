@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useQuiz } from "../../QuizProvider";
 import Results from "../Results";
 import Hero from "../Hero";
@@ -6,6 +6,7 @@ import Hero from "../Hero";
 export default function Quiz() {
   const [questions, setQuestions] = useState([]);
   const [isMounted, setIsMounted] = useState(true);
+  const memoizedHero = useMemo(() => <Hero />, []);
 
   const getQuestions = async () => {
     try {
@@ -20,9 +21,10 @@ export default function Quiz() {
   };
 
   useEffect(() => {
+    setIsMounted(true); 
     getQuestions();
     return () => {
-      setIsMounted(false);
+      setIsMounted(false); 
     };
   }, []);
 
@@ -37,7 +39,7 @@ export default function Quiz() {
 
   return (
     <>
-      <Hero />
+      {memoizedHero}
       <div className="container">
             <div className="qiuz">
                 <h2 className="qiuz_title">

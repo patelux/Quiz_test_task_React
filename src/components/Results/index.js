@@ -4,10 +4,16 @@ import { useQuiz } from "../../QuizProvider";
 export default function Result (){
 
       const { state, dispatch } = useQuiz();
-    
+
       useEffect(() => {
-        localStorage.clear();
-      }, []);
+        const handleBeforeUnload = () => {
+          dispatch({ type: "RESET" });
+        };
+        window.addEventListener("beforeunload", handleBeforeUnload);
+        return () => {
+          window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+      }, [dispatch]);
 
       return (
         <>
@@ -23,7 +29,6 @@ export default function Result (){
                                 </li>
                         ))}
                         </ul>
-                    {/* <button className="button small" onClick={() => dispatch({ type: "RESET" })}>Go through again</button>  */}
                 </div>
             </div>
         </>

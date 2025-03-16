@@ -4,7 +4,7 @@ import quizReducer from "../quizReducer";
 const QuizContext = createContext();
 
 const getInitialState = () => {
-  const savedState = localStorage.getItem("quizState");
+  const savedState = sessionStorage.getItem("quizState");
   return savedState ? JSON.parse(savedState) : { currentQuestion: 0, answers: [] };
 };
 
