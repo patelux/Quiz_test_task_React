@@ -5,7 +5,7 @@ import Hero from "../Hero";
 
 export default function Quiz() {
   const [questions, setQuestions] = useState([]);
-  const [isMounted, setIsMounted] = useState(true);
+  // const [isMounted, setIsMounted] = useState(true);
   const memoizedHero = useMemo(() => <Hero />, []);
 
   const getQuestions = async () => {
@@ -21,11 +21,11 @@ export default function Quiz() {
   };
 
   useEffect(() => {
-    setIsMounted(true); 
+    // setIsMounted(true); 
     getQuestions();
-    return () => {
-      setIsMounted(false); 
-    };
+    // return () => {
+    //   setIsMounted(false); 
+    // };
   }, []);
 
   const { state, dispatch } = useQuiz();

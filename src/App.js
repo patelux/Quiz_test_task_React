@@ -9,10 +9,12 @@ import  Quiz  from "./components/Quiz";
 
 const App = () => {
   return (
-    <QuizProvider>
-      <Header />
-      <Quiz />
-    </QuizProvider>
+    <QuizProvider >
+      <div className='page_wrapper'>
+        <Header />
+        <Quiz />
+      </div>
+    </QuizProvider >
   );
 };
 
