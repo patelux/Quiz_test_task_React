@@ -1,3 +1,6 @@
+import banner_desktop from '../../images/promoImageDesktop2x.jpg';
+import banner_mobile from '../../images/promoImageMob2x.jpg';
+
 export default function Hero (){
    
     return (
@@ -13,7 +16,15 @@ export default function Hero (){
                     be available in Sephora stores. Limit: one box per customer.
                 </p>
             </div>
-            <div className="banner">
+            <div className="banner-wrapper">
+            {banner_mobile && banner_desktop && (
+                <picture>
+                    <source srcSet={banner_mobile} media="(max-width: 1439px)" />
+                    <source srcSet={banner_desktop} media="(min-width: 1440px)" />
+                    <img src={banner_desktop} alt="banner" className="banner" />
+                </picture>
+            )}
+                
             </div>
             <div className="container">
                 <p className="hero_description small_margin">

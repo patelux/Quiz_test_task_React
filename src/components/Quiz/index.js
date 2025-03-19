@@ -5,27 +5,20 @@ import Hero from "../Hero";
 
 export default function Quiz() {
   const [questions, setQuestions] = useState([]);
-  // const [isMounted, setIsMounted] = useState(true);
   const memoizedHero = useMemo(() => <Hero />, []);
 
   const getQuestions = async () => {
     try {
       const response = await fetch('/data/questions.json');
       const data = await response.json();
-      if (isMounted) { 
-        setQuestions(data);
-      }
+      setQuestions(data);
     } catch (error) {
       console.error("Ошибка загрузки вопросов:", error);
     }
   };
 
   useEffect(() => {
-    // setIsMounted(true); 
     getQuestions();
-    // return () => {
-    //   setIsMounted(false); 
-    // };
   }, []);
 
   const { state, dispatch } = useQuiz();

@@ -14,7 +14,7 @@ function Header() {
             <div className="container">
                 <div className="logo-wrapper">
                     <a to="/" className="logo_link">
-                        <img src={logo} alt="logo" className="logo"/>
+                        <img src={logo} alt="logo" className="logo_main"/>
                     </a>
                 </div>
                 <div className="search-container">

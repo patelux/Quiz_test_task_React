@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useQuiz } from "../../QuizProvider";
 
 export default function Result (){
